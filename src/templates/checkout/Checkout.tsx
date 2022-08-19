@@ -7,6 +7,7 @@ import Cart from "../../organisms/cart/Cart";
 import ShippingInfo from "../../molecules/shipping-info/ShippingInfo";
 import PaymentCard from "../../organisms/payment-card/PaymentCard";
 import "./Checkout.scss";
+import Heading from "../../atoms/heading/Heading";
 
 interface ICheckout {}
 
@@ -14,7 +15,7 @@ const Checkout: React.FC<React.PropsWithChildren<ICheckout>> = ({}) => {
   return (
     <div className="checkout-wrapper">
       <div className="sub-header-wrapper">
-        <h4 className="sub-header-title">Shipping and Payment</h4>
+        <Heading type="h4" className="sub-header-title">Shipping and Payment</Heading>
         <div className="sub-header-actions">
           <Button className="shopping-cart-btn" type="secondary">
             <FontAwesomeIcon icon={faCartShopping} />
@@ -26,12 +27,16 @@ const Checkout: React.FC<React.PropsWithChildren<ICheckout>> = ({}) => {
         </div>
       </div>
       <div className="checkout-subcontainer">
-        <ShippingInfo className="app-login" />
+        <div className="shipping-card">
+          <ShippingInfo className="app-login" />
+        </div>
+        <div className="payment-card">
+          <PaymentCard className="" />
+        </div>
 
-        <PaymentCard className="" />
-        
-        <Cart className="app-cart" />
-        
+        <div className="cart-card">
+          <Cart className="app-cart" />
+        </div>
       </div>
     </div>
   );

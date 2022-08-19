@@ -2,6 +2,7 @@ import Input from "../../atoms/input/Input";
 import Button from "../../atoms/button/Button";
 import "./Delivery.scss";
 import React from "react";
+import Heading from "../../atoms/heading/Heading";
 
 interface IDelivery {
   className: string;
@@ -22,7 +23,7 @@ const Delivery: React.FC<React.PropsWithChildren<IDelivery>> = ({
   ];
   return (
     <div className="delivery-container">
-      <h4>Delivery methods</h4>
+      <Heading type="h4">Delivery methods</Heading>
       <div className="delivery-methods-wrapper">
         {deliveryMethods.map((method) => {
           return (

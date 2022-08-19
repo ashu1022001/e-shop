@@ -14,18 +14,19 @@
 .checkout-container {
     display: flex;
     flex-direction: column;
-    gap: 10px;
+    align-items: center;
+    gap: 40px;
 }
 
 .shipping-info {
-    max-width: 470px;
     display: flex;
     flex-direction: column;
-
+    gap: 25px;
     .shipping-form {
         display: flex;
-        justify-content: space-between;
         flex-wrap: wrap;
+        justify-content: center;
+        gap: 10px;
         row-gap: 15px;
         input {
             width: 230px;

@@ -1,0 +1,10 @@
+.heading {
+    font-weight: 500 !important;
+    margin: 0;
+}
+
+@media screen and (max-width: 720px) {
+    .heading {
+        text-align: center;
+    }
+}

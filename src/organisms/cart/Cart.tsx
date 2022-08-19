@@ -1,4 +1,5 @@
 import React from "react";
+import Heading from "../../atoms/heading/Heading";
 import CartItem from "../../molecules/cart-item/CartItem";
 import "./Cart.css";
 interface ICart {
@@ -7,7 +8,7 @@ interface ICart {
 const Cart: React.FC<React.PropsWithChildren<ICart>> = ({ className = "" }) => {
   return (
     <div className="cart-wrapper">
-      <h4 className="cart-title">Your cart</h4>
+      <Heading type="h4" className="cart-title">Your cart</Heading>
       <div className="cart-list">
         <CartItem />
         <CartItem />

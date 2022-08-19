@@ -2,6 +2,7 @@ import Input from "../../atoms/input/Input";
 import Button from "../../atoms/button/Button";
 import "./ShippingInfo.scss";
 import React from "react";
+import Heading from "../../atoms/heading/Heading";
 
 interface IShippingInfo {
   className: string;
@@ -18,7 +19,7 @@ const ShippingInfo: React.FC<React.PropsWithChildren<IShippingInfo>> = ({
       </div>
 
       <div className="shipping-info">
-        <h5 className="shpping-title">Shipping Information</h5>
+        <Heading type="h4" className="shpping-title">Shipping Information</Heading>
         <div className="shipping-form">
           <Input type="text" placeholder="Email" />
           <Input type="text" placeholder="Address" />
