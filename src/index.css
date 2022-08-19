@@ -1,3 +1,10 @@
+@import "./styles/theme.css";
 
+* {
+    box-sizing: border-box;
+    outline: 1px var(--outline-color);
+}
 
-html {}
+html {
+    font-size: 16px;
+}

@@ -6,6 +6,11 @@
     /* margin: 20px; */
 }
 
+.item-id {
+    font-size: 12px;
+    color: var(--slate-color03);
+}
+
 .item-picture {
     max-width: 40px;
     min-width: 30px;

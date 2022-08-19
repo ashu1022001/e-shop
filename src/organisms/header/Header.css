@@ -8,7 +8,7 @@
     width: 100%;
     height: 70px;
     top: 0;
-    border-bottom: 0.5px solid grey;
+    border-bottom: 1px solid var(--border-color);
 }
 
 .header-logo {

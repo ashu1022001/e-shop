@@ -1,19 +1,27 @@
-.modified-button {
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 500px;
-    border: 1px solid grey;
-    transition: 0.2s ease-in-out;
-  }
-  .primary {
-    background: rgb(71, 207, 94);
-    color: white;
-  }
-  .secondary {
-    background: white;
-    color: black;
-  }
-  .primary:hover {
-    background: cornsilk;
-    color: black;
-  }
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 500px;
+  border: 1px solid var(--border-color);
+  transition: 0.2s ease-in-out;
+}
+
+.primary {
+  background: var(--primary-color);
+  color: var(--secondary-color);
+  border: 1px solid transparent;
+}
+
+.secondary {
+  background: var(--secondary-color);
+  color: black;
+}
+
+.primary:hover {
+  background: white;
+  color: var(--primary-color);
+  border: 1px solid var(--border-color);
+}

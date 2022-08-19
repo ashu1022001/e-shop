@@ -1,43 +1,16 @@
 body {
   margin: 0;
 }
-.app-container{
+
+.app-container {
   display: flex;
   flex-direction: column;
   margin-top: 70px;
 }
-.app-subcontainer {
-  font-family: sans-serif;
-  display: flex;
-  justify-content: space-around;
-  align-items: flex-start;
-}
+
+
 .app-header {
   position: fixed;
   top: 0;
   z-index: 1;
-}
-
-.sub-header {
-  width: 100%;
-  min-height: 80px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  color: black;
-}
-
-.sub-header2 {
-  display: flex;
-  max-width: 300px;
-  justify-content: space-around;
-  gap: 10%;
-  margin-right: 5%;
-}
-.sub-header1 {
-  display: flex;
-  max-width: 300px;
-  justify-content: space-around;
-  gap: 10%;
-  margin-left: 5%;
 }

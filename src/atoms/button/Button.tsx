@@ -7,11 +7,12 @@ interface IButton extends React.HTMLAttributes<HTMLButtonElement> {
 
 const Button: React.FC<React.PropsWithChildren<IButton>> = ({
   type = "primary",
+  className,
   children,
   ...props
 }) => {
   return (
-    <button {...props} className={`modified-button ${type}`}>{children}</button>
+    <button {...props} className={`btn ${className} ${type}`}>{children}</button>
   );
 };
 

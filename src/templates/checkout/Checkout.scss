@@ -1,0 +1,45 @@
+.checkout-wrapper {}
+
+.checkout-subcontainer {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+}
+
+
+.sub-header-wrapper {
+    width: 100%;
+    display: flex;
+    padding: 20px 35px;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sub-header-actions {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+
+    .shopping-cart-btn {
+        border: 1px solid var(--primary-color);
+    }
+
+    .line {
+        height: 1px;
+        width: 95px;
+        background-color: var(--border-color);
+    }
+
+    button {
+        border-radius: 50%;
+        width: 35px;
+        height: 35px;
+        padding: 0;
+    }
+}
+
+
+.sub-header-title {
+    font-weight: 500;
+}

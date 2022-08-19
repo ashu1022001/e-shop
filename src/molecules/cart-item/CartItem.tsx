@@ -1,6 +1,6 @@
 import React from "react";
-import "./CartItem.css"
-const  CartItem :React.FC<{}> =()=> {
+import "./CartItem.css";
+const CartItem: React.FC<{}> = () => {
   return (
     <div className="CartItem">
       <div className="item-picture">
@@ -13,11 +13,12 @@ const  CartItem :React.FC<{}> =()=> {
       </div>
       <div className="item-description">
         <div>{"T-shirt Summer vibe"}</div>
+        <span className="item-id">#261311</span>
       </div>
       <div className="item-price">
         <div>{`$89`}</div>
       </div>
     </div>
   );
-}
+};
 export default CartItem;

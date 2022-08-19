@@ -1,0 +1,24 @@
+.payment-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.payment-img {
+    width: 80px;
+    height: 30px;
+
+}
+
+.payment-methods-wrapper {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.payment-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}

@@ -1,0 +1,32 @@
+.delivery-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.delivery-img {
+    width: 80px;
+    height: 30px;
+
+}
+
+.delivery-methods-wrapper {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.delivery-img img {
+    height: 100%;
+    width: 100%;
+    object-fit: contain;
+}
+.delivery-button-wrapper{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 8px 15px;
+    border-radius: 20px;
+}

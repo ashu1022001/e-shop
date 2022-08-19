@@ -2,14 +2,15 @@ import React from "react";
 import "./Input.css"
 
 interface IInput extends React.InputHTMLAttributes<HTMLInputElement> {
-  
+    className?: string;
 }
 
 const Input: React.FC<React.PropsWithChildren<IInput>> = ({
+  className = '',
   ...props
 }) => {
   return (
-    <input className="modifiedInput"{...props} ></input>
+    <input className={`input ${className}`} {...props} ></input>
   );
 };
 
