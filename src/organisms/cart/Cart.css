@@ -1,0 +1,25 @@
+.Cart {
+    max-width: 500px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+    gap: 25px;
+}
+
+.cart-total-value-cont {
+    margin-left: 30px;
+    max-width: 120px;
+    min-width: 80px;
+    background: rgb(219, 216, 216);
+    border-radius: 5000px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    padding: 10px 20px;
+}
+
+.cart-value-text {
+    color: rgb(78, 73, 73);
+}

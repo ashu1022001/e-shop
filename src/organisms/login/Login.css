@@ -1,0 +1,17 @@
+.login-container {
+    display: flex;
+    gap: 10px;
+}
+
+.Login {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.shipping-info {
+    max-width: 400px;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}

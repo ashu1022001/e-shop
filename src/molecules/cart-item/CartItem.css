@@ -1,0 +1,29 @@
+.CartItem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    /* margin: 20px; */
+}
+
+.item-picture {
+    max-width: 40px;
+    min-width: 30px;
+    aspect-ratio: 1;
+    border-radius: 60px;
+    /* border: 10px solid; */
+    overflow: hidden;
+}
+
+.item-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.item-description {
+    max-width: 100px;
+    text-align: start;
+}
+
+/* Input */

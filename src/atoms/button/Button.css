@@ -1,0 +1,19 @@
+.modified-button {
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 500px;
+    border: 1px solid grey;
+    transition: 0.2s ease-in-out;
+  }
+  .primary {
+    background: rgb(71, 207, 94);
+    color: white;
+  }
+  .secondary {
+    background: white;
+    color: black;
+  }
+  .primary:hover {
+    background: cornsilk;
+    color: black;
+  }
