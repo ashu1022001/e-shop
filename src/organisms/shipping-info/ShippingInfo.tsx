@@ -1,14 +1,14 @@
 
 import Input from "../../atoms/input/Input";
 import Button from "../../atoms/button/Button";
-import "./Login.css"
+import "./ShippingInfo.css"
 import React from "react";
 
-interface ILogin {
+interface IShippingInfo {
     className: string;
 }
 
-const Login: React.FC<React.PropsWithChildren<ILogin>> = ({
+const ShippingInfo: React.FC<React.PropsWithChildren<IShippingInfo>> = ({
     className = ""
 }) => {
   return (
@@ -33,4 +33,4 @@ const Login: React.FC<React.PropsWithChildren<ILogin>> = ({
   );
 }
 
-export default Login;
+export default ShippingInfo;

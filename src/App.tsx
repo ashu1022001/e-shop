@@ -1,4 +1,4 @@
-import Login from "./organisms/login/Login";
+import ShippingInfo from "./organisms/shipping-info/ShippingInfo";
 import Cart from "./organisms/cart/Cart";
 import Button from "./atoms/button/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -22,7 +22,7 @@ export default function App() {
           </div>
         </div>
         <div className="app-subcontainer">
-          <Login className="app-login"></Login>
+          <ShippingInfo className="app-login" />
           <Cart className="app-cart" />
         </div>
       </div>
