@@ -68,7 +68,7 @@
 
 @media screen and (max-width:715px) {
     .Header{
-        padding:  0 30px;
+        padding:  0 10px;
     }
     .menu-btn {
         display: block;
@@ -83,16 +83,22 @@
         justify-content: center;
         align-items: center;
         position: absolute;
-        top: 50%;
+        top: 30px;
         height: 40%;
         left: 50%;
         transition: .3s ease;
         transform: translateX(-50%);
         width: 80%;
+        
     }
     .new-header {
         align-items: flex-start;
         height: 90px;
         padding: 5px 0;
+    }
+
+    .fa-xmark{
+        font-size: 20px
+        marg
     }
 }
