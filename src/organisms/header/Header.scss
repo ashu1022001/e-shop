@@ -13,10 +13,9 @@
 }
 
 .header-logo {
-    display: flex;
-    align-items: center;
-    justify-content: space-around;
-    max-width: 150px;
+    width: 130px;
+    height: 48px;
+    object-fit: contain;
 }
 
 .user-name {

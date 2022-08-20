@@ -1,12 +1,14 @@
 import Input from "../../atoms/input/Input";
 import Button from "../../atoms/button/Button";
 import "./ShippingInfo.scss";
-import React from "react";
+import React, { useMemo } from "react";
 import Heading from "../../atoms/heading/Heading";
 import LoginModal from "../../organisms/login-modal/LoginModal";
 import { useState } from "react";
 import SignupModal from "../../organisms/signup-modal/SignupModal";
 import { useAuth } from "../../hooks/useAuth";
+import Dropdown from "../../atoms/dropdown/Dropdown";
+import { countryList } from "../../data/countries";
 
 interface IShippingInfo {
   className: string;
@@ -15,23 +17,35 @@ interface IShippingInfo {
 const ShippingInfo: React.FC<React.PropsWithChildren<IShippingInfo>> = ({
   className = "",
 }) => {
-
-
-  const { currentUser} = useAuth();
-
+  const { currentUser } = useAuth();
 
   const [isLoginModalOpen, toggleLoginModal] = useState(false);
   const [isSignupModalOpen, toggleSignUpModal] = useState(false);
 
+  const countries = useMemo(() => {
+    return countryList.map((country) => ({ label: country, value: country }));
+  }, []);
+
   return (
     <div className="checkout-container">
-      <LoginModal isOpen={isLoginModalOpen} closeFn={() => toggleLoginModal(false) }/>
-      <SignupModal isOpen={isSignupModalOpen} closeFn={() => toggleSignUpModal(false) }/>
-     { !currentUser?.email && (<div className="auth-container">
-        <Button variation="primary" onClick={() => toggleLoginModal(true)}>LOG IN</Button>
-        <Button variation="secondary" onClick={() => toggleSignUpModal(true)} >SIGN UP</Button>
-      </div>)
-}
+      <LoginModal
+        isOpen={isLoginModalOpen}
+        closeFn={() => toggleLoginModal(false)}
+      />
+      <SignupModal
+        isOpen={isSignupModalOpen}
+        closeFn={() => toggleSignUpModal(false)}
+      />
+      {!currentUser?.email && (
+        <div className="auth-container">
+          <Button variation="primary" onClick={() => toggleLoginModal(true)}>
+            LOG IN
+          </Button>
+          <Button variation="secondary" onClick={() => toggleSignUpModal(true)}>
+            SIGN UP
+          </Button>
+        </div>
+      )}
 
       <div className="shipping-info">
         <Heading type="h4" className="shpping-title">
@@ -45,7 +59,7 @@ const ShippingInfo: React.FC<React.PropsWithChildren<IShippingInfo>> = ({
           <Input type="text" placeholder="Last name" />
           <Input type="text" placeholder="Postal Code/Zip" />
           <Input type="text" placeholder="Phone number" />
-          <Input type="text" placeholder="country" />
+          <Dropdown options={countries}></Dropdown>
         </div>
       </div>
     </div>

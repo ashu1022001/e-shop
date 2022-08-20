@@ -24,9 +24,8 @@ const Header: React.FC<React.PropsWithChildren<IHeader>> = ({
 
   return (
     <nav className="Header">
-      <div className="header-logo">
-        <span></span>
-        <span>E-shop</span>
+      <div>
+        <img className="header-logo" alt="logo" src="/img/logo.png" />
       </div>
       <ul className="header-category">
         <li>

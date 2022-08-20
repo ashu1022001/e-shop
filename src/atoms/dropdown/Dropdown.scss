@@ -1,0 +1,8 @@
+.dropdown {
+    border: 1px solid var(--border-color);
+    border-radius: 500px;
+    height: 40px;
+    &:focus {
+        outline: 1px solid var(--primary-color);
+    }
+}
