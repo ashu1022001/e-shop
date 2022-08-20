@@ -50,6 +50,7 @@ const Header: React.FC<React.PropsWithChildren<IHeader>> = ({
           <Popover
             isOpen={isPopoverOpen}
             positions={["bottom", "left", "right"]} // preferred positions by priority
+            onClickOutside={() => setIsPopoverOpen(false)}
             content={
               <Button
                 className="logout-btn"
