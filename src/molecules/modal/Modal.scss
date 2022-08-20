@@ -1,0 +1,57 @@
+.modal {
+    position: fixed;
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    animation: fadeIn 0.2s linear;
+
+
+
+    .modal-close {
+        position: absolute;
+        right: 12px;
+        top: 12px;
+        width: 2px;
+        height: 2px;
+        padding: 0;
+        color: var(--slate-color02);
+    }
+
+    .overlay {
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        opacity: 0.4;
+    }
+
+    .modal-content {
+        background-color: white;
+        position: absolute;
+        z-index: 1;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        border-radius: 10px;
+    }
+
+    .modal-header {
+        border-bottom: 1px solid var(--border-color);
+    }
+
+    .modal-footer {
+        border-top: 1px solid var(--border-color);
+    }
+}
+
+
+@keyframes fadeIn {
+    from {
+        transform: scale(0);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}

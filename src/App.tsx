@@ -1,18 +1,16 @@
-import ShippingInfo from "./molecules/shipping-info/ShippingInfo";
-import Cart from "./organisms/cart/Cart";
-import Button from "./atoms/button/Button";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import Header from "./organisms/header/Header";
-import { faCartShopping, faTruck } from "@fortawesome/free-solid-svg-icons";
+
 import "./App.css";
-import Checkout from "./templates/checkout/Checkout";
+import { AuthContext } from "./contexts/auth";
+import { useEffect, useState } from "react";
+import { IUser } from "./types/user";
+import Layout from "./templates/layout/Layout";
+
 export default function App() {
+  const [ currentUser, setCurrentUser ] = useState<IUser | null>(null);
+
   return (
-    <div className="App">
-      <Header className="app-header" />
-      <div className="app-container">
-        <Checkout />
-      </div>
-    </div>
+    <AuthContext.Provider value={[currentUser, setCurrentUser]}>
+      <Layout></Layout>
+    </AuthContext.Provider>
   );
 }

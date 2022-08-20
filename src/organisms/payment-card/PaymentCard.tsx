@@ -14,8 +14,8 @@ const PaymentCard: React.FC<React.PropsWithChildren<IPaymentCard>> = ({
 }) => {
   return (
     <div className="payment-card-container">
-        <Payment className=""/>
-        <Delivery className=""/>
+      <Payment className="" />
+      <Delivery className="" />
     </div>
   );
 };

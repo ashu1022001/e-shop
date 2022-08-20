@@ -3,6 +3,10 @@ import Button from "../../atoms/button/Button";
 import "./ShippingInfo.scss";
 import React from "react";
 import Heading from "../../atoms/heading/Heading";
+import LoginModal from "../../organisms/login-modal/LoginModal";
+import { useState } from "react";
+import SignupModal from "../../organisms/signup-modal/SignupModal";
+import { useAuth } from "../../hooks/useAuth";
 
 interface IShippingInfo {
   className: string;
@@ -11,15 +15,28 @@ interface IShippingInfo {
 const ShippingInfo: React.FC<React.PropsWithChildren<IShippingInfo>> = ({
   className = "",
 }) => {
+
+
+  const { currentUser} = useAuth();
+
+
+  const [isLoginModalOpen, toggleLoginModal] = useState(false);
+  const [isSignupModalOpen, toggleSignUpModal] = useState(false);
+
   return (
     <div className="checkout-container">
-      <div className="auth-container">
-        <Button type="primary">LOG IN</Button>
-        <Button type="secondary">SIGN UP</Button>
-      </div>
+      <LoginModal isOpen={isLoginModalOpen} closeFn={() => toggleLoginModal(false) }/>
+      <SignupModal isOpen={isSignupModalOpen} closeFn={() => toggleSignUpModal(false) }/>
+     { !currentUser?.email && (<div className="auth-container">
+        <Button variation="primary" onClick={() => toggleLoginModal(true)}>LOG IN</Button>
+        <Button variation="secondary" onClick={() => toggleSignUpModal(true)} >SIGN UP</Button>
+      </div>)
+}
 
       <div className="shipping-info">
-        <Heading type="h4" className="shpping-title">Shipping Information</Heading>
+        <Heading type="h4" className="shpping-title">
+          Shipping Information
+        </Heading>
         <div className="shipping-form">
           <Input type="text" placeholder="Email" />
           <Input type="text" placeholder="Address" />

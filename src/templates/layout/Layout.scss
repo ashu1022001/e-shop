@@ -1,0 +1,12 @@
+.layout-container {
+    display: flex;
+    flex-direction: column;
+    margin-top: 70px;
+}
+
+
+.layout-header {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}

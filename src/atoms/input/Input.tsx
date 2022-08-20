@@ -1,17 +1,15 @@
 import React from "react";
-import "./Input.css"
+import "./Input.scss";
 
 interface IInput extends React.InputHTMLAttributes<HTMLInputElement> {
-    className?: string;
+  className?: string;
 }
 
 const Input: React.FC<React.PropsWithChildren<IInput>> = ({
-  className = '',
+  className = "",
   ...props
 }) => {
-  return (
-    <input className={`input ${className}`} {...props} ></input>
-  );
+  return <input className={`input ${className}`} {...props}></input>;
 };
 
 export default Input;

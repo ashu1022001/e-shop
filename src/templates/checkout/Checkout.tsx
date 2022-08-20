@@ -1,4 +1,9 @@
-import { faCartShopping, faTruck } from "@fortawesome/free-solid-svg-icons";
+import {
+  faArrowLeft,
+  faBackspace,
+  faCartShopping,
+  faTruck,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import Button from "../../atoms/button/Button";
@@ -15,13 +20,13 @@ const Checkout: React.FC<React.PropsWithChildren<ICheckout>> = ({}) => {
   return (
     <div className="checkout-wrapper">
       <div className="sub-header-wrapper">
-        <Heading type="h4" className="sub-header-title">Shipping and Payment</Heading>
+        <h3 className="sub-header-title">Shipping and Payment</h3>
         <div className="sub-header-actions">
-          <Button className="shopping-cart-btn" type="secondary">
+          <Button className="shopping-cart-btn" variation="secondary">
             <FontAwesomeIcon icon={faCartShopping} />
           </Button>
           <div className="line"></div>
-          <Button type="primary">
+          <Button variation="primary">
             <FontAwesomeIcon icon={faTruck} />
           </Button>
         </div>
@@ -36,6 +41,16 @@ const Checkout: React.FC<React.PropsWithChildren<ICheckout>> = ({}) => {
 
         <div className="cart-card">
           <Cart className="app-cart" />
+        </div>
+      </div>
+      <div className="checkout-actions">
+        <Button className="checkout-action-navigation" variation="secondary">
+          <FontAwesomeIcon icon={faArrowLeft} />
+          <span>back</span>
+        </Button>
+        <div className="checkout-action-buttons">
+          <Button variation="secondary"> CONTINUE SHOPPING </Button>
+          <Button variation="primary"> PROCEED TO PAYMENT </Button>
         </div>
       </div>
     </div>

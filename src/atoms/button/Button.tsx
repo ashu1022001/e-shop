@@ -1,19 +1,19 @@
 import React from "react";
-import "./Button.css"
+import "./Button.scss";
 
-interface IButton extends React.HTMLAttributes<HTMLButtonElement> {
-  type: "primary" | "secondary";
+interface IButton extends React.ButtonHTMLAttributes<HTMLButtonElement> {
+  variation: "primary" | "secondary";
 }
 
-const Button: React.FC<React.PropsWithChildren<IButton>> = ({
-  type = "primary",
-  className,
-  children,
-  ...props
-}) => {
+const Button = React.forwardRef<
+  HTMLButtonElement,
+  React.PropsWithChildren<IButton>
+>(({ variation = "primary", className = '', children, ...props }, ref) => {
   return (
-    <button {...props} className={`btn ${className} ${type}`}>{children}</button>
+    <button ref={ref} {...props} className={`btn ${className} ${variation}`}>
+      {children}
+    </button>
   );
-};
+});
 
 export default Button;

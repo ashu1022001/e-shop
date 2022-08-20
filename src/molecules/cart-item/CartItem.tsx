@@ -1,22 +1,29 @@
 import React from "react";
+import { IItem } from "../../types/cart";
 import "./CartItem.css";
-const CartItem: React.FC<{}> = () => {
+
+
+
+interface ICartItem{
+  item: IItem;
+}
+const CartItem: React.FC<ICartItem> = ({
+  item
+}) => {
   return (
     <div className="CartItem">
       <div className="item-picture">
         <img
-          src={
-            "https://images.unsplash.com/photo-1621072156002-e2fccdc0b176?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8c2hpcnR8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60"
-          }
+          src={item?.itemSrc}
           alt="item"
         ></img>
       </div>
       <div className="item-description">
-        <div>{"T-shirt Summer vibe"}</div>
-        <span className="item-id">#261311</span>
+        <div>{item?.itemDescription}</div>
+        <span className="item-id">{item?.itemId}</span>
       </div>
       <div className="item-price">
-        <div>{`$89`}</div>
+        <div>${item?.itemCost}</div>
       </div>
     </div>
   );

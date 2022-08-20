@@ -25,9 +25,9 @@ const Payment: React.FC<React.PropsWithChildren<IPayment>> = ({
       <div className="payment-methods-wrapper">
         {paymentMethods.map((method) => {
           return (
-            <Button type="secondary" key={method}>
+            <Button variation="secondary" key={method}>
               <div className="payment-img">
-                <img src={`/img/${method}`} />{" "}
+                <img src={`/img/payment/${method}`} />{" "}
               </div>
             </Button>
           );

@@ -56,9 +56,32 @@
     }
 }
 
+.checkout-actions {
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    * {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px
+    }
+
+    .secondary {
+        border: 1px solid;
+    }
+}
 
 .sub-header-title {
     font-weight: 500;
+    font-weight: 900;
+}
+
+.checkout-action-navigation {
+    border: 1px solid var(--border-color) !important;
 }
 
 
@@ -78,6 +101,7 @@
 
     .checkout-subcontainer {
         row-gap: 45px;
+
         .shipping-card {
             grid-column: span 12 / span 12;
         }
@@ -89,6 +113,13 @@
         .cart-card {
             grid-column: span 12 / span 12;
         }
+
+        
+    }
+
+    .checkout-actions {
+        row-gap: 20px;
+        flex-direction: column-reverse;
     }
 
 }

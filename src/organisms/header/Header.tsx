@@ -1,39 +1,82 @@
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import "./Header.css"
+import { Popover } from "react-tiny-popover";
+import "./Header.scss";
 import {
   faCartShopping,
   faSearch,
-  faUser
+  faSignOut,
+  faUser,
 } from "@fortawesome/free-solid-svg-icons";
+import { useAuth } from "../../hooks/useAuth";
+import Button from "../../atoms/button/Button";
+import { useState } from "react";
 
 interface IHeader {
-    className: string;
+  className: string;
 }
 
-const Header:React.FC<React.PropsWithChildren<IHeader>>=(
-    {
-        className = ""
-    }
-) => {
+const Header: React.FC<React.PropsWithChildren<IHeader>> = ({
+  className = "",
+}) => {
+  const { logout, currentUser } = useAuth();
+
+  const [isPopoverOpen, setIsPopoverOpen] = useState(false);
+
   return (
-    <div className="Header">
+    <nav className="Header">
       <div className="header-logo">
         <span></span>
         <span>E-shop</span>
       </div>
-      <div className="header-category">
-        <span> Men</span>
-        <span>Women </span>
-        <span>Kids </span>
-      </div>
-      <div className="header-icons">
-        <FontAwesomeIcon icon={faSearch} />
-        <FontAwesomeIcon icon={faCartShopping} />
-        <FontAwesomeIcon icon={faUser} />
-      </div>
-    </div>
-  );
-}
+      <ul className="header-category">
+        <li>
+          <Button variation="secondary">Men</Button>
+        </li>
+        <li>
+          <Button variation="secondary">Women</Button>
+        </li>
+        <li>
+          <Button variation="secondary">Kids</Button>
+        </li>
+      </ul>
 
-export default Header
+      <div className="header-icons">
+        <Button variation="secondary">
+          <FontAwesomeIcon icon={faSearch} />
+        </Button>
+        <Button variation="secondary">
+          <FontAwesomeIcon icon={faCartShopping} />
+        </Button>
+        {currentUser && (
+          <Popover
+            isOpen={isPopoverOpen}
+            positions={["bottom", "left", "right"]} // preferred positions by priority
+            content={
+              <Button
+                className="logout-btn"
+                variation="secondary"
+                onClick={() => {
+                  logout();
+                  setIsPopoverOpen(false);
+                }}
+              >
+                <FontAwesomeIcon icon={faSignOut} />
+                <span>Logout</span>
+                <span className="user-name">{currentUser?.displayName}</span>
+              </Button>
+            }
+          >
+            <Button variation="secondary">
+              <FontAwesomeIcon
+                icon={faUser}
+                onClick={() => setIsPopoverOpen(!isPopoverOpen)}
+              />
+            </Button>
+          </Popover>
+        )}
+      </div>
+    </nav>
+  );
+};
+
+export default Header;
