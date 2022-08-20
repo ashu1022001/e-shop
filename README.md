@@ -28,7 +28,7 @@
   <p align="center">
     A checkout page template for an ecommerce web app.
     <br />
-    <a href="https://eshop-41827.web.app/">View Demo</a>
+    <a href="https://eshop-41827.web.app/" target="_blank">View Demo</a>
   </p>
 </div>
 
